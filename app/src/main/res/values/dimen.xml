@@ -3,6 +3,4 @@
     <dimen name="app_bar_main_height">140dp</dimen>
     <dimen name="toolbar_height">60dp</dimen>
     <dimen name="icon_size">50dp</dimen>
-    <dimen name="icon_size2">50dp</dimen>
-    <dimen name="icon_size3">50dp</dimen>
 </resources>
