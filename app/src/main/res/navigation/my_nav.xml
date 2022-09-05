@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/heroListFragment">
+
+    <fragment
+        android:id="@+id/heroListFragment"
+        android:name="ru.igor.marvelapp.ui.fragments.HeroListFragment"
+        android:label="fragment_hero_list"
+        tools:layout="@layout/fragment_hero_list" >
+        <action
+            android:id="@+id/action_heroListFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favHeroesFragment"
+        android:name="ru.igor.marvelapp.ui.fragments.FavHeroesFragment"
+        android:label="fragment_fav_heroes"
+        tools:layout="@layout/fragment_fav_heroes" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.igor.marvelapp.ui.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/factsFragment"
+        android:name="ru.igor.marvelapp.ui.fragments.FactsFragment"
+        android:label="fragment_facts"
+        tools:layout="@layout/fragment_facts"/>
+    <dialog
+        android:id="@+id/searchFragment"
+        android:name="ru.igor.marvelapp.ui.fragments.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_heroListFragment"
+            app:popUpTo="@id/heroListFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/heroListFragment" />
+    </dialog>
+</navigation>

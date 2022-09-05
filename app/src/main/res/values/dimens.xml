@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bottom_margin">10</dimen>
+    <dimen name="default_size">15</dimen>
+    <dimen name="bottom_nav_height">60</dimen>
+</resources>
