@@ -12,7 +12,8 @@ class HeroListFragment : Fragment() {
     var menu: Menu? = null
     lateinit var binding: FragmentHeroListBinding
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHeroListBinding.inflate(inflater, container, false)
@@ -20,7 +21,6 @@ class HeroListFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         setupCollapsingToolbar()
         super.onViewCreated(view, savedInstanceState)
     }
@@ -31,23 +31,23 @@ class HeroListFragment : Fragment() {
             setHasOptionsMenu(true)
         }
         binding.appBarLayout.addOnOffsetChangedListener(object :
-            AppBarLayout.OnOffsetChangedListener {
-            var scrollRange = -1
-            override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
-                if (scrollRange == -1) {
-                    scrollRange = appBarLayout.totalScrollRange
-                }
-                if (scrollRange + verticalOffset == 0) {
-                    (activity as MainActivity).apply {
-                        menu?.findItem(R.id.search)?.isVisible = true
+                AppBarLayout.OnOffsetChangedListener {
+                var scrollRange = -1
+                override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
+                    if (scrollRange == -1) {
+                        scrollRange = appBarLayout.totalScrollRange
                     }
-                } else {
-                    (activity as MainActivity).apply {
-                        menu?.findItem(R.id.search)?.isVisible = false
+                    if (scrollRange + verticalOffset == 0) {
+                        (activity as MainActivity).apply {
+                            menu?.findItem(R.id.search)?.isVisible = true
+                        }
+                    } else {
+                        (activity as MainActivity).apply {
+                            menu?.findItem(R.id.search)?.isVisible = false
+                        }
                     }
                 }
-            }
-        })
+            })
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
